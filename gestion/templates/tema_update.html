@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+
+  
+<div class="contact-clean" >
+    <form method="POST">
+        {% csrf_token %}
+        <br>
+        <br>   
+        <div>
+            <label for="Titulo"></label>
+        </div> 
+        <div class="form-group">
+            <label>Titulo</label>
+            <input type="text" name="{{form.titulo.name}}" placeholder="Título" class="form-control" value="{{ tema.titulo }}" /></div>
+        <div class="form-group">
+            <label>Descripción</label>
+            <input type="text" name="{{form.descripcion.name}}" placeholder="Fuente" class="form-control "  value="{{tema.descripcion}}"/><small ></small></div>
+        <div class="form-group">
+            <label>Fuente</label>
+            <input type="text" name="{{form.fuente.name}}" placeholder="Fuente" class="form-control "  value="{{tema.fuente}}"/><small ></small></div>
+        <input type="submit" class="btn btn-primary" value="Guardar Tema">
+        <input type="submit" class="btn btn-primary"  name="cancel" value="Cancelar">
+     </form>
+ </div>
+   
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<form method="post">
+    {% csrf_token %}
+    
+    <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">¿Está seguro que desea eliminar el tema: {{tema.titulo}}"?</h5>
+         
+        <input type="submit"  class="btn mb-2 btn-primary" value="Sí, eliminar">
+        <input type="submit"  class="btn mb-2 btn-secondary" name="cancel" value="Cancelar" />
+    </form>
+{% endblock %}

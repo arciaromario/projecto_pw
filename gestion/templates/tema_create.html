@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <div class="contact-clean">
+        <form method="post">
+            {% csrf_token %}
+            <h2 class="text-center">Crear nuevo tema de tesis</h2>
+            <div class="form-group">
+                <label>Titulo</label>
+                <input type="text" name="{{form.titulo.name}}" placeholder="Título" class="form-control" /></div>
+            <div class="form-group">
+                <label>Descripción</label>
+                <input type="text" name="{{form.descripcion.name}}" placeholder="Descripción" class="form-control " /><small ></small></div>
+            <div class="form-group">
+                <label>Fuente</label>
+                <input type="text" name="{{form.fuente.name}}" placeholder="Fuente" class="form-control " /><small ></small></div>
+            <input type="submit" class="btn btn-primary" value="Guardar Tema">
+        </form>
+    </div>
+
+{% endblock  %}
